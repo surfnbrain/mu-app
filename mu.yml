@@ -1,0 +1,13 @@
+namespace: mu-35
+environments:
+- name: acceptance
+- name: production
+service:
+  port: 80
+  healthEndpoint: /
+  pathPatterns:
+  - /*
+  pipeline:
+    source:
+      provider: GitHub
+      repo: surfnbrain/mu_app
