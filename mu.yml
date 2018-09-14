@@ -1,11 +1,8 @@
 namespace: mu-35
 environments:
   - name: acceptance
-    provider: ecs-fargate
   - name: production
-    provider: ecs-fargate
 service:
-  name: ecs-fargate-example
   port: 80
   healthEndpoint: /
   pathPatterns:
