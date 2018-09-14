@@ -10,4 +10,4 @@ service:
   pipeline:
     source:
       provider: GitHub
-      repo: surfnbrain/mu_app
+      repo: surfnbrain/mu-app
