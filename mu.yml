@@ -1,7 +1,20 @@
 namespace: devops.evisions.com
 environments:
   - name: acceptance
+      provider: ecs-fargate
   - name: production
+      provider: ecs-fargate
+    loadbalancer:
+      internal: false                # Whether to create an internal ELB or not (default: false)
+      hostedzone: devops.evisions.com      # HostedZone in Route53 to create ELB DNS for.  Leave blank to not create DNS (default: none)
+      name: api                     # Name to register in hostedzone for ELB DNS.  (default: environment name)
+      certificate: 973c1a2f-8d43... # The identifier of a certificate in ACM.  If defined, will create HTTPS listener in ELB.  (default: none)
+
+    ### Custom tags for the stacks
+    tags:
+      FOO: bar                    # Create a tag with key `FOO` and value `bar`
+      HELLO: world                # Create a tag with key `HELLO` and value `world`
+    
 service:
   port: 80
   healthEndpoint: /
