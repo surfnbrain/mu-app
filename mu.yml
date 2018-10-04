@@ -1,4 +1,4 @@
-namespace: mu-35
+namespace: devops.evisions.com
 environments:
   - name: acceptance
   - name: production
